@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const iframePDF = document.querySelector('#iframePDF');
+        const selectOption = document.querySelector('#selectOption');
+
+        selectOption.addEventListener('change', (e) => {
+            // console.log('cambiando', selectOption.value);
+
+            const liga = selectOption.value;
+
+            iframePDF.setAttribute('src',liga );
+
+        })
+
+    })
+
+</script>
+<style>
+    .contenedor{
+        width: 90%;
+        max-width: 1000px;
+        margin: 0 auto;
+        height: 100vh;
+    }
+    .selector{
+        margin: 3rem 0;
+        width: 20rem;
+        height: 2rem;
+    }
+</style>
+<body>
+    <div class="contenedor">
+        <select name="" id="selectOption" class="selector">
+            <option value="https://www.secst.cl/upfiles/documentos/29082016_1042am_57c465f3719b0.pdf">PDF 1</option>
+            <option value="https://www.suneo.mx/literatura/subidas/Jonathan%20Swift%20Los%20viajes%20de%20Gulliver.pdf">PDF 2</option>
+            <option value="https://thixalongmy.haugiang.gov.vn/media/1175/clean_code.pdf">PDF 3</option>
+            <option value="https://www.slu.edu/medicine/clinics-community/aims/pdfs/pig-human-heart.pdf">PDF 4</option>
+            <option value="ASUS-X670-Series-Specs.pdf">PDF 5</option>
+        </select>
+
+        <iframe id="iframePDF" src="" frameborder="0" width="100%" height="100%"></iframe>
+
+    </div>
+</body>
+</html>
